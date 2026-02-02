@@ -97,7 +97,6 @@ const VolumeButton = ({ audioRef }: { audioRef: React.RefObject<HTMLAudioElement
 
 export default function Navbar() {
   const audioRef = useRef<HTMLAudioElement>(null);
-  // isDarkText = true si on veut du texte noir (sur fond blanc)
   const [isDarkText, setIsDarkText] = useState(false);
 
   useEffect(() => {
@@ -105,12 +104,6 @@ export default function Navbar() {
       const scrollY = window.scrollY;
       const vh = window.innerHeight;
 
-      // Logique pour déterminer la couleur du texte
-      // Zone 1 : Intro (0 à 100vh) -> Texte BLANC (isDarkText = false)
-      // Zone 2 : Description (100vh à 200vh) -> Texte NOIR (isDarkText = true)
-      // Zone 3 : Section1 (200vh+) -> Texte BLANC (isDarkText = false)
-
-      // On ajoute un petit buffer (-50px) pour la transition
       if (scrollY > vh - 50 && scrollY < (2 * vh) - 50) {
         setIsDarkText(true);
       } else {
@@ -139,7 +132,7 @@ export default function Navbar() {
     <>
       <audio ref={audioRef} loop muted playsInline>
         <source src="/audio/1.mp3" type="audio/mpeg" />
-        Votre navigateur ne supporte pas l'audio.
+        Votre navigateur ne supporte pas l&apos;audio.
       </audio>
 
       <nav className={`fixed top-0 left-0 right-0 z-50 grid grid-cols-3 items-center px-6 py-4 transition-colors duration-300 ${textColorClass}`}>
@@ -177,7 +170,7 @@ export default function Navbar() {
               transition: { duration: 0.5, ease: [0.25, 0.4, 0.25, 1], delay: 0.5 }
             }}
           >
-            Let's talk
+            Let&apos;s talk
           </motion.button>
         </div>
       </nav>

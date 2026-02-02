@@ -1,6 +1,5 @@
 'use client';
-import React, { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import React from 'react'
 import Image from 'next/image'
 
 import FadeIn from '../ui/FadeIn'
@@ -97,7 +96,7 @@ export default function Work() {
 
           <div className="col-span-4 h-[25vw] bg-gray-100 relative overflow-hidden group">
             <FadeIn delay={0.2} className="w-full h-full">
-              <img src="/images/1.1.jpg" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
+              <Image src="/images/1.1.jpg" fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" alt={'Alpine Lodge'} />
             </FadeIn>
           </div>
         </div>

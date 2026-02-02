@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, Variants } from 'framer-motion'
 
 export default function HeroTitle() {
   const brand = "DON'T BE DUMB";
@@ -8,7 +8,7 @@ export default function HeroTitle() {
 
   const letters = brand.split('');
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -19,7 +19,7 @@ export default function HeroTitle() {
     }
   };
 
-  const child: any = {
+  const child: Variants = {
     hidden: {
       opacity: 0,
       y: 40,

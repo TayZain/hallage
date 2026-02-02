@@ -2,16 +2,19 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
+type Margin = NonNullable<Parameters<typeof useInView>[1]>['margin'];
+
+
 interface FadeInProps {
   children: React.ReactNode;
   delay?: number;
   className?: string;
-  margin?: string;
+  margin?: Margin;
 }
 
 export default function FadeIn({ children, delay = 0, className = "", margin = "-10%" }: FadeInProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: margin as any });
+  const isInView = useInView(ref, { once: true, margin });
 
   return (
     <motion.div

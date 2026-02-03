@@ -4,6 +4,7 @@ import "./globals.css";
 import Preloader from "@/components/ui/Preloader";
 import { Providers } from "./providers";
 import LenisProvider from "@/components/LenisProvider";
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
       >
         <Providers>
           <LenisProvider>
+            <Analytics />
             <Preloader />
             {children}
           </LenisProvider>
